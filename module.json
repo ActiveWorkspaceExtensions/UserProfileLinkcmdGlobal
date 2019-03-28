@@ -1,0 +1,47 @@
+{
+    "name": "UserProfileLinkcmdGlobal",
+    "desc": "Global link for Home Folder",
+    "type": [
+        "native"
+    ],
+    "skipTest": true,
+    "commandsViewModel": {
+        "commands": {
+            "UserProfileLinkcmdGlobal": {
+                "iconId": "cmdUser",
+                "title": "{{i18n.UserProfileLinkcmdGlobalTitle}}"
+            }
+        },
+        "commandHandlers": {
+            "UserProfileLinkcmdGlobalHandler": {
+                "id": "UserProfileLinkcmdGlobal",
+                "action": "showUserProfileLink",
+                "activeWhen": true,
+                "visibleWhen": true
+            }
+        },
+        "commandPlacements": {
+            "UserProfileLinkcmdGlobalaw_globalToolbar": {
+                "id": "UserProfileLinkcmdGlobal",
+                "uiAnchor": "aw_globalNavigationbar",
+                "priority": 100
+            }
+        },
+        "actions": {
+            "showUserProfileLink": {
+                "actionType": "Navigate",
+                "navigateTo": "com_siemens_splm_clientfx_tcui_xrt_showObject",
+                "navigationParams": {
+                    "uid": "{{ctx.user.uid}}",
+                    "cmdId": "{{commandContext.cmdId}}",
+                    "cmdArg": "{{commandContext.cmdArgs}}"
+                }
+            }
+        },
+        "i18n": {
+            "UserProfileLinkcmdGlobalTitle": [
+                "UserProfileLinkcmdGlobalMessages"
+            ]
+        }
+    }
+}
